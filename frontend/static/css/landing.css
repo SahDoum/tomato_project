@@ -1,0 +1,26 @@
+  
+.header {
+  height: 100vh;
+
+  /*background:*/
+/*  background-image: url(https://i4.hurimg.com/i/hurriyet/75/0x0/59e85515d3806c3928c2b17a.jpg);*/
+  background-image: url("/static/img/landing.jpeg");
+  background-size: cover;
+  background-position: top;
+
+/*  display: flex;*/
+/*  margin-bottom: 100px;*/
+/*  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;*/
+}
+
+
+.window {
+  border-radius: .45rem;
+  background-color: #ffffff;
+  padding: 1.52rem;
+  box-shadow: 0 8px 24px 0 rgba(0, 0, 0, 0.1); 
+  opacity: 0.8;
+}

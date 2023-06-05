@@ -1,0 +1,92 @@
+{% load static %}
+
+
+
+<!-- ToDo: переименовть индекс в лендинг -->
+<!-- css для крутого лендинга (https://codepen.io/devtips/pen/XJByvr/): -->
+<!-- header
+  height: 100vh
+  background:
+    image: url(https://unsplash.imgix.net/photo-1414490929659-9a12b7e31907)
+    size: cover
+    position: center
+  margin-bottom: 50px
+
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center -->
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Сервис "Томатка"</title>
+    <meta name="description" content="Томатка -- прогрессивный этичный сервис для покупки помидорок"/>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=K2D:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/landing.css' %}">
+
+
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+
+</head>
+<body>
+<section class="bg-gradient pb-6">
+    <div class="header">
+
+        <div class="row">
+            <div class="col-md-0 mx-auto ">
+                <div class="container text-center window mx-auto mt-8">
+                    <h1>Сервис номер один по заказу помидорок</h1>
+                    <h3>tomayto, tomahto</h3>
+                    <a href="{% url 'order' %}" class="btn btn-dark">Заказать прямо сейчас!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-9 mx-auto">
+        <div class="row mt-5">
+            <div class="col-md-11 mx-auto bg-light container window text-center">
+                <h1>Добро пожаловать в сервис Tomato</h1>
+                <div class="col-md-0 mx-auto mb-5 ">
+                Это этичный сервис, который напрямую соединяет заказчиков и поставщиков, сохраняя гибкое взаимодействие.
+                Наша цель -- создать новый опыт покупки помидорок, не подчиняющийся капиталистическому давлению.
+                Мы занимаемся защитой прав и потребителей, и поставщиков.
+                </div>
+                <a href="{% url 'order' %}" class="btn btn-dark">Сделать свой первый заказ</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<footer class="py-1 my-2 bg-light" style="height: 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                tomayto, tomahto
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://prismjs.com/test.html">Test Drive</a></li>
+                    <li class="list-inline-item"><a href="https://prismjs.com/extending.html">API Docs</a></li>
+                    <li class="list-inline-item"><a href="https://github.com/LeaVerou/prism/">Fork Prism.js on GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-md-4 mx-auto text-muted text-center small-xl">
+                &copy; 2022 Tomato Project - All Rights Reserved
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+

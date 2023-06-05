@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+      <div class="col-12 d-flex flex-row align-items-center justify-content-between">
+          <div class="heading-brand">Томатка</div>
+          <a href="{% url 'order' %}" class="btn btn-dark">Заказать</a>
+      </div>
+      <div class="col-md-9 mx-auto">
+        <div class="row mt-5">
+            <div class="col-md-11 mx-auto bg-light container text-center">
+              Спасибо за заказ, {{ name }}! Ждите доставку в ближайшее время.
+          </div>
+        </div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,70 @@
+{% load static %}
+
+<!-- ToDo: перетащить css футера и страницы в css файл  И вынести, если возможно, высоту футера в отдельную переменную -->
+
+
+<!doctype html>
+<html lang="ru">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}Сервис "Томатка"{% endblock %}</title>
+    <meta name="description" content="Томатка -- прогрессивный этичный сервис для покупки томата"/>
+
+    <!--Google font-->
+    <link href="https://fonts.googleapis.com/css?family=K2D:300,400,500,700,800" rel="stylesheet">
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+
+    <link rel="icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+
+</head>
+<body>
+
+
+<!--Header Section-->
+<section class="bg-gradient pt-5 pb-6" style="min-height: 100%;  margin-bottom: -100px;">
+    <div class="container">
+        <div class="col-12 d-flex flex-row align-items-center justify-content-between">
+          <div class="heading-brand">Томатка</div>
+          <a href="{% url 'order' %}" class="btn btn-dark">Заказать</a>
+        </div>
+        <div class="col-12 d-flex flex-row align-items-center justify-content-between">
+            {% if user.is_authenticated%}
+            <p>Добро пожаловать, {{user.username}}</p>
+            <a href="{% url 'logout' %}">Выйти</a>
+            {%else%}
+            <p>Please <a href="{% url 'login' %}">Login</a></p>
+            {%endif%}
+        </div>
+        <div class="col-md-9 mx-auto">
+            {% block content %}{% endblock %}
+        </div>
+      </div>
+    </div>
+</section>
+
+<!--footer-->
+<footer class="py-1 my-2 bg-light" style="height: 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="https://prismjs.com/test.html">Test Drive</a></li>
+                    <li class="list-inline-item"><a href="https://prismjs.com/extending.html">API Docs</a></li>
+                    <li class="list-inline-item"><a href="https://github.com/LeaVerou/prism/">Fork Prism.js on GitHub</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row my-2">
+            <div class="col-md-4 mx-auto text-muted text-center small-xl">
+                &copy; 2019 Prism - All Rights Reserved
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

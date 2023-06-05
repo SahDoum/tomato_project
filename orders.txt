@@ -1,0 +1,6 @@
+Имя: Валентин2, Адрес: Москва Ясенево, e-main: promyslov@gmail.comИмя: Валентин, Адрес: Москва Ясенево, e-main: promyslov@gmail.comИмя: Валентин3, Адрес: Москва Ясенево, e-main: promyslov@gmail.com
+Имя: Валентин3, Адрес: Москва Ясенево, e-main: promyslov@gmail.com
+Имя: alex, Адрес: kyrgyzstan, e-main: alex@gmail.com
+Имя: 1, Адрес: 1, e-main: 1@q.ru
+Имя: 1, Адрес: 1, e-main: 1@q.ru
+Имя: 1, Адрес: 1, e-main: 1@q.ru

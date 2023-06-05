@@ -1,0 +1,58 @@
+
+{# ToDo: сделать темную тему для доставщиков #}
+{# ToDo: сделать входную точку для доставщиков с главной #}
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Доставщик -- "Томатка"{% endblock %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/orders.css' %}">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="container">
+<div class="row">
+	<div class="col-lg-12">
+		<div class="main-box clearfix">
+			{% if orders %}
+			<div class="table-responsive">
+				<table class="table user-list">
+					<thead>
+						<tr>
+							<th><span>Заказ создан</span></th>
+							<th class="text-center"><span>Статус</span></th>
+							<th class="text-center"><span>Тип</span></th>
+							<th class="text-center"><span>Доставщик</span></th>
+							<th>&nbsp;</th>
+						</tr>
+					</thead>
+					<tbody>
+		                {% for order in orders %}
+		                    {% include "users/supplier_order.html" with order=order %}
+		                {% endfor %}
+					</tbody>
+				</table>
+
+	            {% else %}
+	                <div class="profile-list-placeholder">
+	                    Пользователь пока не сделал ни одного заказа...
+	                </div>
+            	{% endif %}
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+
+<!-- Load our React component. -->
+<script type="text/javascript"> window.CSRF_TOKEN = "{{ csrf_token }}"; </script>  
+<script  src="{% static 'js/profile.js' %}"></script>
+
+
+{% endblock %}

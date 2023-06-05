@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+
+
+{% block content %}
+
+<div class="row mt-4">
+    <div class="col-md-8 mx-auto text-center">
+        <h1>{% trans "Зарегистрироваться" %}</h1>
+
+        <p>{% blocktrans %}Уже есть аккаунт? Войдите <a href="{{ login_url }}">вход</a>.{% endblocktrans %}</p>
+    </div>
+
+    <div class="col-md-8 mx-auto">
+        <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+          {% csrf_token %}
+          {{ form | crispy }}
+          {% if redirect_field_value %}
+            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button class="btn btn-primary" type="submit">{% trans "Регистрация" %} &raquo;</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
